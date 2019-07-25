@@ -2,7 +2,7 @@ def MaxPoolingWithArgmax(inputs):
   output, argmax = tf.nn.max_pool_with_argmax(inputs, ksize = [1, 2, 2, 1], strides = [1, 2, 2, 1], padding = 'SAME')
   return [output, argmax]
 
-def UnMaxPooling(inputs):
+def UnMaxPoolingFixed(inputs):
   pooled, ind = inputs
   
   ind = K.cast(ind, "int32")
@@ -30,12 +30,3 @@ def UnMaxPooling(inputs):
                  input_shape[3]]
   return K.reshape(unpooled, output_shape)
   
-#usage  
-with K.tf.Session() as sess:
-  batch = K.constant([[
-      [[1],[2],[3],[4]],[[5],[6],[7],[8]],[[9],[10],[11],[12]],[[13],[14],[15],[16]]
-  ],
-                     [
-      [[21],[22],[23],[24]],[[25],[26],[27],[28]],[[29],[210],[211],[212]],[[213],[214],[215],[216]]]])
-  pooled, ind = MaxPoolingWithArgmax(batch)
-  print(sess.run(UnMaxPooling([pooled, ind])))
