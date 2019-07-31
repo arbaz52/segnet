@@ -7,7 +7,7 @@ Keras, Tensorflow, Python, SegNet, Computer Vision, Image Segmentation, MaxPooli
 
 ## Contributors
 - Arbaz Ajaz <arbaz5256@gmail.com>
-- Kanwal Shariq
+- Kanwal Shariq @kanwalgs <kanwalshariq@gmail.com>
 
 ***
 
